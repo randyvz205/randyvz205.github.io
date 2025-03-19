@@ -15,13 +15,13 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 200%; /* Adjust based on the number of images */
+            width: 300%; /* Adjust based on the number of images */
             height: 100%;
             display: flex;
             animation: slide 20s linear infinite;
         }
         .sliding-background img {
-            width: 50%; /* Adjust based on the number of images */
+            width: 33.33%; /* Adjust based on the number of images */
             height: 100%;
             object-fit: cover;
         }
@@ -30,17 +30,18 @@
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(-50%);
+                transform: translateX(-66.66%); /* Adjust based on the number of images */
             }
         }
     </style>
 </head>
 <body>
     <div class="sliding-background">
-        <img src="night.jpg" alt="Image 1">
-        <img src="nighty.png" alt="Image 2">
         <img src="mine.jpg" alt="Image 1">
-        <img src="nightyy.png" alt="Image 2">
+        <img src="night.jpg" alt="Image 2">
+        <img src="nighty.png" alt="Image 3">
+        <img src="nightyy.png" alt="Image 1">
+       
     </div>
 </body>
 </html>
