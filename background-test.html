@@ -15,12 +15,15 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 400%; /* Adjust based on the number of images */
+            width: 300%; /* Adjust based on the number of images */
             height: 100%;
-            background-image: url('mine.jpg'), url('nightyy.jpg'), url('night.jpg'), url('nighty.jpg'); /* Replace with your image URLs */
-            background-size: cover;
-            background-repeat: repeat-x;
+            display: flex;
             animation: slide 20s linear infinite;
+        }
+        .sliding-background img {
+            width: 33.33%; /* Adjust based on the number of images */
+            height: 100%;
+            object-fit: cover;
         }
         @keyframes slide {
             0% {
@@ -33,6 +36,11 @@
     </style>
 </head>
 <body>
-    <div class="sliding-background"></div>
+    <div class="sliding-background">
+        <img src="mine.jpg" alt="Image 1">
+        <img src="night.jpg" alt="Image 2">
+        <img src="nighty.png" alt="Image 3">
+        <!-- Add more images as needed -->
+    </div>
 </body>
 </html>
