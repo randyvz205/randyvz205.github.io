@@ -4,8 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Styled Buttons</title>
-    <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    .top-buttons {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.pro-button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pro-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.pro-button:active {
+  background-color: #004085;
+}
+</style>
 <body>
     <div class="top-buttons">
         <button class="pro-button">Home</button>
