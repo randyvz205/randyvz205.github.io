@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Background</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        .sliding-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%; /* Double the width to create the sliding effect */
+            height: 100%;
+            background-image: url('5297078.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-repeat: repeat-x;
+            animation: slide 10s linear infinite;
+        }
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sliding-background"></div>
+</body>
+</html>
