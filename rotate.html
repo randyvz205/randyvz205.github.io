@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Squares</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; /* Align squares at the bottom */
+            background-color: #282c34; /* Background color */
+        }
+        .square {
+            width: 50px;
+            height: 50px;
+            background-color: #61dafb;
+            position: absolute;
+            bottom: 0;
+            animation: moveUp 5s linear infinite, rotate 5s linear infinite;
+        }
+        @keyframes moveUp {
+            0% {
+                bottom: 0;
+                opacity: 1;
+            }
+            100% {
+                bottom: 100%;
+                opacity: 0;
+            }
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+
+    <script>
+        // Generate squares dynamically
+        const squares = document.querySelectorAll('.square');
+        const colors = ['#61dafb', '#ff6f61', '#6b5b95', '#feb236'];
+
+        squares.forEach((square, index) => {
+            // Set random left position for each square
+            square.style.left = `${Math.random() * 100}%`;
+            // Set different animation delays for each square
+            square.style.animationDelay = `${index * 1.5}s`;
+            // Set random background color for each square
+            square.style.backgroundColor = colors[index % colors.length];
+        });
+    </script>
+</body>
+</html>
