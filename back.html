@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page with Back Button</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #282c34;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #61dafb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .back-button:hover {
+            background-color: #21a1f1;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="goBack()">Back to Main Screen</button>
+    <div>
+        <h1>Welcome to This Page</h1>
+        <p>Content of the page goes here.</p>
+    </div>
+
+    <script>
+        function goBack() {
+            // Navigate back to the main screen
+            window.location.href = 'index.html'; // Replace 'index.html' with the actual main screen URL
+        }
+    </script>
+</body>
+</html>
