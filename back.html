@@ -1,22 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page with Back Button</title>
+    <!-- this is the font for the website, the code is grabbed from google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">  
+    
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
+        h1 {
+            text-align: center;
+            font-size: 10vw;  /* Already in vw */
+            letter-spacing: 0.42vw; /* 5px converted to vw based on 1200px screen width */
+            text-shadow: 0.33vw 0.33vw 0.67vw black, -0.33vw -0.33vw 0.67vw black, 0.33vw -0.33vw 0.67vw black, -0.33vw 0.33vw 0.67vw black; /* Converted to vw */
+            animation-name: rotateTitle;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            position: relative;
+            z-index: 3;
+        }
+    
+        h2 {
+            text-align: center;
+            font-size: 4vw;
+            margin-top: -10vw; 
+            position: relative;
+            z-index: 4;
+         }
+    
+        body {
+            color: white;
+            overflow: hidden;
+            height: 100vh;
+            background-image: url('MineCraftBg.png');
+            background-repeat: repeat-x; 
+            background-size: 100vw auto; 
+            font-family: 'Jersey 10', sans-serif; 
+            font-weight: normal;
+            text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
+            animation: moveBackground 20s linear infinite; /* Apply animation */
+        }
+
+        @keyframes rotateTitle {
+             0% {
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                transform: rotate(5deg);
+            }
+           
+            100% {
+                transform: rotate(-5deg);
+            }
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0; /* Start from the left */
+            }
+            100% {
+                background-position: 100vw 0; /* End at 100% of the viewport width */
+            }
+        }
+        .button {
+            color: blue;
+        }
+    
+        .html {
+            background: rgb(33,171,84);
+            background: linear-gradient(90deg, rgba(33,171,84,1) 0%, rgba(0,255,1,1) 53%, rgba(0,174,255,1) 87%);
+        }
+    
+        .top-buttons {
             display: flex;
             justify-content: center;
-            align-items: center;
-            background-color: #282c34;
-            color: white;
-            font-family: Arial, sans-serif;
+            padding: 0;
         }
+    
+        .pro-button {
+            background-color: black;
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 0;  /* Remove padding to make it easier to center */
+            text-align: center;
+            text-decoration: none;
+            display: flex;  /* Use flexbox for centering */
+            justify-content: center;  /* Center text horizontally */
+            align-items: center;  /* Center text vertically */
+            font-size: 2.5vw; /* 30px converted to vw */
+            margin: 0.33vw 0.17vw;  /* 4px 2px converted to vw */
+            cursor: pointer;
+            border-radius: 0px;
+            transition: background-color 1s ease, transform 1s ease, font-size 0.3s ease; /* Add font-size transition */
+            border: 0.5vw solid #ffffff; /* 6px converted to vw */
+            width: 33.33vw;  /* 400px converted to vw */
+            height: 4.17vh;  /* 50px converted to vh based on a typical screen height of 800px (5% of screen height) */
+            z-index: 3;
+        }
+    
+        .pro-button:hover {
+            background-color: #000000;
+            transform: scale(1.05);
+            font-size: 2.67vw; /* 32px converted to vw */
+        }
+    
+        .pro-button:active {
+            background-color: #000000;
+            transform: scale(1.15);
+            font-size: 3.33vw; /* 40px converted to vw */
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            background-image: url("Images/dirtblock.png");
+            background-size: cover;
+            background-color: transparent;
+            position: absolute;
+            z-index: 1;
+            bottom: -10vw; /* Start from below the screen */
+            opacity: 1;
+            animation: popUp 3s linear forwards;
+        }
+
+        /* Animation keyframes */
+        @keyframes popUp {
+            0% {
+                bottom: -10vw;
+                opacity: 1;
+            }
+            50% {
+                bottom: 50%;
+                opacity: 1;
+            }
+            100% {
+                bottom: 100%;
+                opacity: 0.25;
+            }
+        }
+
+        /* Back button styles */
         .btn-80,
         .btn-80 *,
         .btn-80 :after,
@@ -62,7 +186,7 @@
           box-sizing: border-box;
           display: block;
           overflow: hidden;
-          padding: 0.8rem 2rem; /* Smaller padding for a smaller button */
+          padding: 0.6rem 1.5rem; /* Smaller padding for a smaller button */
           position: relative;
           text-transform: uppercase;
         }
@@ -148,14 +272,39 @@
             left: 10px; /* Move button to the left */
         }
     </style>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG!</title>
+    <link rel="icon" type="image/x-icon" href="Images/cglogo.png">
+
 </head>
 <body>
     <div class="back-button-container">
         <button class="btn-80" onclick="goBack()"><span>Back to Main Screen</span></button>
     </div>
-    <div>
-        <h1>Welcome to This Page</h1>
-        <p>Content of the page goes here.</p>
+
+    <h1>Minecraft</h1>
+    <h2>Game versions available below.</h2>
+
+    <div class="top-buttons">
+        <a href="McVersions/Mc1.12.html" class="pro-button">Minecraft 1.12</a>
+    </div>
+    <div class="top-buttons">
+        <a href="McVersions/Mc1.8.8.html" class="pro-button">Minecraft 1.8.8</a>
+    </div>
+    <div class="top-buttons">
+      <a href="McVersions/Mc1.7.2.html" class="pro-button">Minecraft 1.7.2</a>
+    </div>
+    <div class="top-buttons">
+      <a href="McVersions/Mc1.5.2.html" class="pro-button">Minecraft 1.5.2</a>
+    </div>
+    <div class="top-buttons">
+      <a href="McVersions/Mc1.3.html" class="pro-button">Minecraft 1.3</a>
+    </div>
+    <div class="top-buttons">
+      <a href="McVersions/Mc.1.2.6.html" class="pro-button">Minecraft 1.2.6</a>
     </div>
 
     <script>
@@ -164,5 +313,7 @@
             window.location.href = 'index.html'; // Replace 'index.html' with the actual main screen URL
         }
     </script>
+    
+    <script src="dirtblockmake.js"></script>
 </body>
 </html>
