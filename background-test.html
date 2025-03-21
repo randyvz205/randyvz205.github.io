@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open New Window</title>
+    <title>Open about:blank with HTML</title>
     <style>
         .open-button {
             background-color: black;
@@ -23,7 +23,6 @@
             border: 0.5vw solid #ffffff; 
             width: 33.33vw;  
             height: 4.17vh;
-            z-index: 2;
         }
 
         .open-button:hover {
@@ -40,12 +39,41 @@
     </style>
 </head>
 <body>
-    <button class="open-button" id="openButton">Open New Window</button>
+    <button class="open-button" id="openButton">Open about:blank with HTML</button>
 
     <script>
         document.getElementById('openButton').addEventListener('click', function() {
             var newWindow = window.open('about:blank', '_blank');
-            newWindow.location.href = 'https://www.example.com'; // Replace with your desired URL
+            var htmlContent = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Injected HTML</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh;
+                            margin: 0;
+                            background-color: #f0f0f0;
+                        }
+                        h1 {
+                            color: #333;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h1>Hello, this is an injected HTML content!</h1>
+                </body>
+                </html>
+            `;
+            newWindow.document.open();
+            newWindow.document.write(htmlContent);
+            newWindow.document.close();
         });
     </script>
 </body>
