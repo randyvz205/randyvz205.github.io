@@ -3,25 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Website in iframe</title>
+    <title>Toggle Website in iframe</title>
     <style>
         #iframeContainer {
             width: 100%;
             height: 80vh;
             border: none;
+            display: none; /* Initially hidden */
         }
     </style>
 </head>
 <body>
-    <button id="openWebsiteButton">Open Website</button>
+    <button id="toggleWebsiteButton">Toggle Website</button>
     <div id="iframeWrapper"></div>
 
     <script>
-        document.getElementById('openWebsiteButton').addEventListener('click', function() {
-            var iframe = document.createElement('iframe');
-            iframe.id = 'iframeContainer';
-            iframe.src = 'https://www.example.com'; // Replace with your desired URL
-            document.getElementById('iframeWrapper').appendChild(iframe);
+        document.getElementById('toggleWebsiteButton').addEventListener('click', function() {
+            var iframeWrapper = document.getElementById('iframeWrapper');
+            var iframe = document.getElementById('iframeContainer');
+
+            if (!iframe) {
+                // Create iframe if it does not exist
+                iframe = document.createElement('iframe');
+                iframe.id = 'iframeContainer';
+                iframe.src = 'https://randyvz205.github.io/'; // Replace with your desired URL
+                iframeWrapper.appendChild(iframe);
+            }
+
+            // Toggle display of iframe
+            iframe.style.display = (iframe.style.display === 'none') ? 'block' : 'none';
         });
     </script>
 </body>
