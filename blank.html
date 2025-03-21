@@ -19,11 +19,44 @@
             margin: 20px 0;
             font-size: 1.5em;
         }
+        
+        .pro-button {
+            background-color: black;
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 0;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5vw;
+            margin: 0;
+            cursor: pointer;
+            border-radius: 0px;
+            transition: background-color 1s ease, transform 1s ease, font-size 0.3s ease;
+            border: 0.5vw solid #ffffff; 
+            width: 33.33vw;  
+            height: 4.17vh;
+            z-index: 2;
+        }
+        
+        .pro-button:hover {
+            background-color: #000000;
+            transform: scale(1.05);
+            font-size: 2.67vw; 
+        }
+        
+        .pro-button:active {
+            background-color: #000000;
+            transform: scale(1.15);
+            font-size: 3.33vw; 
+        }
     </style>
 </head>
 <body>
     <h1>Random Joke Generator</h1>
-    <button id="jokeButton">Get a Random Joke</button>
+    <button id="jokeButton" class="pro-button">Get a Random Joke</button>
     <div id="joke"></div>
 
     <script>
