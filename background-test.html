@@ -3,45 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sliding Background</title>
+    <title>Open New Window</title>
     <style>
-        body, html {
-            margin: 0;
+        .open-button {
+            background-color: black;
+            border: none;
+            color: rgb(255, 255, 255);
             padding: 0;
-            height: 100%;
-            overflow: hidden; /* Prevent scrolling */
-        }
-        .sliding-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 300%; /* Adjust based on the number of images */
-            height: 100%;
+            text-align: center;
+            text-decoration: none;
             display: flex;
-            animation: slide 40s linear infinite;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5vw;
+            margin: 0;
+            cursor: pointer;
+            border-radius: 0px;
+            transition: background-color 1s ease, transform 1s ease, font-size 0.3s ease;
+            border: 0.5vw solid #ffffff; 
+            width: 33.33vw;  
+            height: 4.17vh;
+            z-index: 2;
         }
-        .sliding-background img {
-            width: 33.33%; /* Adjust based on the number of images */
-            height: 100%;
-            object-fit: cover;
+
+        .open-button:hover {
+            background-color: #000000;
+            transform: scale(1.05);
+            font-size: 2.67vw; 
         }
-        @keyframes slide {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-66.66%); /* Adjust based on the number of images */
-            }
+
+        .open-button:active {
+            background-color: #000000;
+            transform: scale(1.15);
+            font-size: 3.33vw; 
         }
     </style>
 </head>
 <body>
-    <div class="sliding-background">
-        <img src="mine.jpg" alt="Image 1">
-        <img src="night.jpg" alt="Image 2">
-        <img src="nighty.png" alt="Image 3">
-        <img src="nightyy.png" alt="Image 1">
-       
-    </div>
+    <button class="open-button" id="openButton">Open New Window</button>
+
+    <script>
+        document.getElementById('openButton').addEventListener('click', function() {
+            var newWindow = window.open('about:blank', '_blank');
+            newWindow.location.href = 'https://www.example.com'; // Replace with your desired URL
+        });
+    </script>
 </body>
 </html>
