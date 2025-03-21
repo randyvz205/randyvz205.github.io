@@ -10,7 +10,8 @@
 
     <script>
         document.getElementById('openWebsiteButton').addEventListener('click', function() {
-            window.open('https://randyvz205.github.io/', '_blank');
+            var newWindow = window.open('about:blank', '_blank');
+            newWindow.location.href = 'https://randyvz205.github.io/';
         });
     </script>
 </body>
