@@ -2,46 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Fake Webpage</title>
     <style>
-        html {
-            background: rgb(0, 0, 0);
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
         }
         h1 {
-            text-align: center;
-            font-family: 'Brush Script MT', cursive;
-            font-size: 40px;
-            text-shadow: 0 0 3px #282835, 0 0 5px #0000FF;
+            color: #333;
         }
-       a {
-        font-size: 20px;
-       }
-       h2 {
-        text-align: center;
-            font-family: 'Brush Script MT', cursive;
-       }
     </style>
 </head>
-
 <body>
-    
-    <button id="theme" onclick="toggleTheme()">
-        <img class="sun" src="sun-regular-240.png" width="36" height="36" alt="Light">
-        <img class="moon" src="moon-regular-240.png" width="36" hieght="36" alt="Dark">
-      </button>
-        <nav>
-        <a style="color: #000000;"  href="https://randol26.github.io">Back</a>
-    </nav>
-    
+    <h1>Welcome to the Fake Webpage</h1>
+    <p>Press the "R" key to go to the real webpage.</p>
 
-
-    <script src="clock.js"></script>
-        <h1>👷Welcome! 👷(Under construction)👷</h1>
-        <h2 style="color: rgb(241, 29, 29);">im making this Website but i still need more work</h2>
-        <h2 style="color: rgb(46, 217, 236);" > This is where i am just going to do fun things lol</h2>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'r' || event.key === 'R') {
+                window.location.href = 'index.html'; // Replace with the real webpage URL
+            }
+        });
+    </script>
 </body>
-
 </html>
-    
