@@ -1,48 +1,46 @@
 /* Fix user-agent */
-
 * {
     box-sizing: border-box;
-  }
-  
-  html {
+}
+
+html {
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
-  }
-  
-  html,
-  input {
+}
+
+html,
+input {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
-      "Helvetica", "Arial", "Lucida Grande", "sans-serif";
-  }
-  
-  html,
-  body {
+        "Helvetica", "Arial", "Lucida Grande", "sans-serif";
+}
+
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
-  }
-  
-  ul {
+}
+
+ul {
     list-style: none;
     word-wrap: break-word;
-  }
-  
-  /* Pages */
-  
-  .pages {
+}
+
+/* Pages */
+.pages {
     height: 100%;
     margin: 0;
     padding: 0;
     width: 100%;
-  }
-  
-  .page {
+}
+
+.page {
     height: 100%;
     position: absolute;
     width: 100%;
-  }
-  
-  /* Login Page */
-  
-  .login.page {
+}
+
+/* Login Page */
+.login.page {
     background-color: #000;
+}
