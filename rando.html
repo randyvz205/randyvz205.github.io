@@ -227,6 +227,10 @@
             iframe.style.border = "none";
             iframe.src = url;
             win.document.body.appendChild(iframe);
+
+            win.onbeforeunload = function() {
+                return "Are you sure you want to close the game?";
+            };
         }
     </script>
 
