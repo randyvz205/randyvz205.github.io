@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const socket = io('http://localhost:3000'); // Connect to the backend server
     const messagesDiv = document.getElementById('messages');
     const messageInput = document.getElementById('message-input');
     const sendButton = document.getElementById('send-button');
@@ -6,11 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     sendButton.addEventListener('click', function() {
         const messageText = messageInput.value.trim();
         if (messageText !== '') {
-            const messageElement = document.createElement('div');
-            messageElement.textContent = messageText;
-            messagesDiv.appendChild(messageElement);
+            socket.emit('message', messageText); // Send message to the server
             messageInput.value = '';
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
         }
     });
 
@@ -18,5 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.key === 'Enter') {
             sendButton.click();
         }
+    });
+
+    socket.on('message', function(msg) {
+        const messageElement = document.createElement('div');
+        messageElement.textContent = msg;
+        messagesDiv.appendChild(messageElement);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
     });
 });
