@@ -1,52 +1,231 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Online Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        button {
-            background-color: #4CAF50; /* Green */
-            border: none;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #f4f4f4;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Navbar */
+        .navbar {
+            background-color: #2c3e50;
             color: white;
-            padding: 15px 32px;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
+        .navbar a {
+            color: white;
             text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+            color: #f1c40f;
+        }
+        .search-box {
+            background: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+        .login-btn {
+            background: #f1c40f;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .login-btn:hover {
+            background: #e67e22;
+        }
+        /* Hero Section */
+        .hero {
+            background: url('https://source.unsplash.com/1600x600/?education,books') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+        /* Course Cards */
+        .courses {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px;
+        }
+        .course-card {
+            background: white;
+            padding: 20px;
+            width: 30%;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .course-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        }
+        .course-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        /* Testimonials */
+        .testimonials {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .testimonial {
+            margin-top: 20px;
+            font-style: italic;
+        }
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            background: #f1c40f;
+            padding: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .cta:hover {
+            background: #e67e22;
+        }
+        .cta a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        .footer a {
+            color: #f1c40f;
+            text-decoration: none;
+        }
+        /* Hidden Button */
+        .hidden-button {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: none;
+            border: none;
+            color: transparent;
             cursor: pointer;
-            border-radius: 12px;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-        html{
-            background-color: black;
+            font-size: 1px;
         }
     </style>
 </head>
-
 <body>
-    <button onclick="openGame()">Open Game</button>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div><b>EduLearn</b></div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Courses</a>
+            <a href="#">About</a>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search courses...">
+        </div>
+        <a href="#" class="login-btn">Login</a>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        Learn Anytime, Anywhere
+    </div>
+
+    <!-- Courses -->
+    <div class="courses">
+        <div class="course-card">
+            <img src="https://source.unsplash.com/300x200/?coding,computer" alt="Course">
+            <h3>Introduction to Programming</h3>
+            <p>Learn the basics of Python, Java, and more.</p>
+        </div>
+        <div class="course-card">
+            <img src="https://source.unsplash.com/300x200/?math,education" alt="Course">
+            <h3>Advanced Mathematics</h3>
+            <p>Explore calculus, algebra, and problem-solving techniques.</p>
+        </div>
+        <div class="course-card">
+            <img src="https://source.unsplash.com/300x200/?history,books" alt="Course">
+            <h3>World History</h3>
+            <p>Discover the past and how it shapes the present.</p>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials">
+        <h2>What Our Students Say</h2>
+        <p class="testimonial">"This platform changed how I learn!" - Alex J.</p>
+        <p class="testimonial">"Great courses and easy to use!" - Maria R.</p>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta">
+        <a href="#">Start Learning Now!</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 EduLearn | <a href="#">Contact Us</a> | <a href="#">Privacy Policy</a>
+    </div>
+
+    <!-- Hidden Button -->
+    <button class="hidden-button" onclick="openGame()">&#8203;</button>
+
     <script>
         function openGame() {
             var win = window.open("", "_blank", "fullscreen=yes");
-            var url = "https://arturo267.github.io/"
-            var iframe = win.document.createElement('iframe')
+            var url = "https://arturo267.github.io/";
+            var iframe = win.document.createElement('iframe');
             iframe.style.position = "absolute";
             iframe.style.top = "0";
             iframe.style.left = "0";
             iframe.style.width = "100%";
             iframe.style.height = "100%";
             iframe.style.border = "none";
-            iframe.src = url
+            iframe.src = url;
             win.document.body.appendChild(iframe);
-
-            win.onbeforeunload = function() {
-                return "Are you sure you want to close the game?";
-            };
         }
     </script>
-</body>
 
+</body>
 </html>
