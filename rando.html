@@ -27,9 +27,12 @@
     <button onclick="openGame()">Open Game</button>
     <script>
         function openGame() {
-            var win = window.open()
+            var win = window.open("", "_blank", "fullscreen=yes");
             var url = "https://arturo267.github.io/"
             var iframe = win.document.createElement('iframe')
+            iframe.style.position = "absolute";
+            iframe.style.top = "0";
+            iframe.style.left = "0";
             iframe.style.width = "100%";
             iframe.style.height = "100%";
             iframe.style.border = "none";
