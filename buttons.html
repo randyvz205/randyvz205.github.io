@@ -1,195 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- this is the font for the website, the code is grabbed from google fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">  
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Online Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        h1 {
-            position: relative;
-            text-align: center;
-            font-size: 10vw; 
-            letter-spacing: 0.42vw;
-            text-shadow: 0.33vw 0.33vw 0.67vw black, -0.33vw -0.33vw 0.67vw black, 0.33vw -0.33vw 0.67vw black, -0.33vw 0.33vw 0.67vw black; 
-            animation-name: rotateTitle;
-            animation-duration: 5s;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out;
-            z-index: 2;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
         }
-    
-        h2 {
-            position: relative;
-            text-align: center;
-            font-size: 4vw;
-            margin-top: -10vw; 
-            z-index: 3;
-         }
-    
         body {
+            background-color: #f4f4f4;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Navbar */
+        .navbar {
+            background-color: #2c3e50;
             color: white;
-            overflow: hidden;
-            height: 100vh;
-            background-image: url('Images/background.png');
-            background-repeat: repeat-x; 
-            background-size: 100vw auto; 
-            font-family: 'Jersey 10', sans-serif; 
-            font-weight: normal;
-            text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
-            animation: moveBackground 20s linear infinite; 
-        }
-
-        @keyframes moveBackground {
-            0% {
-                background-position: 0 0; 
-            }
-            100% {
-                background-position: 100vw 0; 
-            }
-        }
-
-        @keyframes rotateTitle {
-             0% {
-                transform: rotate(-5deg);
-            }
-
-            50% {
-                transform: rotate(5deg);
-            }
-           
-            100% {
-                transform: rotate(-5deg);
-            }
-        }
-    
-        .button {
-            color: blue;
-        }
-    
-        .html {
-            background: rgb(33,171,84);
-            background: linear-gradient(90deg, rgba(33,171,84,1) 0%, rgba(0,255,1,1) 53%, rgba(0,174,255,1) 87%);
-        }
-    
-        .top-buttons {
             display: flex;
-            justify-content: center;
-            padding: 0;
-            margin: 10px 0;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
         }
-    
-        .pro-button {
-            background-color: black;
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+            color: #f1c40f;
+        }
+        .search-box {
+            background: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .search-box input {
             border: none;
-            color: rgb(255, 255, 255);
-            padding: 0;  
-            text-align: center;
+            outline: none;
+            padding: 5px;
+        }
+        .login-btn {
+            background: #f1c40f;
+            padding: 8px 15px;
+            border-radius: 5px;
             text-decoration: none;
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-            font-size: 2.5vw; 
-            margin: 0vw 0vw; 
-            cursor: pointer;
-            border-radius: 0px;
-            transition: background-color 1s ease, transform 1s ease, font-size 0.3s ease;
-            border: 0.5vw solid #ffffff; 
-            width: 33.33vw;  
-            height: 4.17vh; 
-            z-index: 2;
+            font-weight: bold;
         }
-    
-        .pro-button:hover {
-            background-color: #000000;
-            transform: scale(1.05);
-            font-size: 2.67vw; 
+        .login-btn:hover {
+            background: #e67e22;
         }
-    
-        .pro-button:active {
-            background-color: #000000;
-            transform: scale(1.15);
-            font-size: 3.33vw; 
-        }
-
-        /* Scrollbox for games */
-            .scroll-box {
-                width: 35vw;
-                height: 45vh;
-                overflow-y: scroll; /* Enable scrolling, but will hide the scrollbar visually */
-                margin: 0.5vw auto;
-                padding: 0.5vw;
-                border: 0.02vw solid #ffffff;
-                border-radius: 0.1vw;
-                background-color: rgba(0, 0, 0, 0.7); /* Transparent background */
-                display: flex;
-                flex-direction: column;
-                gap: 0;
-                border-radius: 0vw;
-                border: 0.5vw solid #ffffff; 
-            }
-
-            .scroll-box::-webkit-scrollbar {
-            display: none; /* Hides the scrollbar for webkit browsers (Chrome, Safari, etc.) */
-        }
-            /* Square styles */
-         .square {
-            width: 10vw;
-            height: 10vw;
-            background-color: #ffffff;
-            position: absolute;
-            z-index: 1;
-            bottom: -10vw; /* Start from below the screen */
-            opacity: 0.5;
-            animation: popUp 3s linear forwards;
-        }
-
-        /* Animation keyframes */
-        @keyframes popUp {
-            0% {
-                bottom: -10vw;
-                opacity: 0.5;
-            }
-            50% {
-                bottom: 50%;
-                opacity: 0.5;
-            }
-            100% {
-                bottom: 100%;
-                opacity: 0.25;
-            }
-        }       
-
-        .search-bar {
-            text-shadow: 0.33vw 0.33vw 0.67vw black, -0.33vw -0.33vw 0.67vw black, 0.33vw -0.33vw 0.67vw black, -0.33vw 0.33vw 0.67vw black; 
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1696902271695-0031d244cd37?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+            height: 300px;
             display: flex;
-            justify-content: center;
-            padding: 0;
-            margin: 10px 0;
-            background-color: black;
-            color: rgb(255, 255, 255);
-            padding: 0;  
-            text-align: center;
-            text-decoration: none;
-            display: flex; 
-            justify-content: center; 
+            flex-direction: column;
             align-items: center;
-            font-size: 2.5vw; 
-            margin: 0vw 0vw; 
-            cursor: pointer;
-            border-radius: 0px;
-            border: 0.5vw solid #ffffff; 
-            width: 33.33vw;  
-            height: 4.17vh; 
-            font-family: 'Jersey 10', sans-serif; 
-            font-weight: normal;
-            text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
-            z-index: 2;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            animation: fadeIn 2s ease-in-out;
         }
-
-        input[type="text"].search-bar:focus {
-            outline: none; /* Remove the default outline on focus */
+        /* Course Cards */
+        .courses {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px;
+        }
+        .course-card {
+            background: white;
+            padding: 20px;
+            width: 30%;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .course-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        }
+        .course-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        /* Testimonials */
+        .testimonials {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .testimonial {
+            margin-top: 20px;
+            font-style: italic;
+        }
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            background: #f1c40f;
+            padding: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .cta:hover {
+            background: #e67e22;
+        }
+        .cta a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        .footer a {
+            color: #f1c40f;
+            text-decoration: none;
+        }
+        /* Hidden Button */
+        .hidden-button {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: red;
+            width: 10px;
+            height: 10px;
+    
+            border: none;
+            color: transparent;
+            cursor: pointer;
+            font-size: 1px;
         }
 
         /* Hidden content styles */
@@ -202,11 +163,6 @@
             display: block;
         }
     </style>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduLearn - Online Learning</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -270,13 +226,13 @@
         <button class="hidden-button" onclick="openGame()">&#8203;</button>
     </div>
 
+    <!-- Button to toggle visibility of hidden content -->
+    <button onclick="toggleHiddenContent()">Show Hidden Content</button>
+
     <!-- Hidden content -->
     <div class="hidden-content">
         <h1>Cool games!</h1>
         <h2>Video juegos muy profesionales.</h2>
-
-        <!-- Button to toggle visibility of hidden content -->
-        <button onclick="toggleHiddenContent()">Show Hidden Content</button>
 
         <!-- Search bar for games -->
         <div class="top-buttons">
