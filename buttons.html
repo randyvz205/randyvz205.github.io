@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- this is the font for the website, the code is grabbed from google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">  
+    
+    <style>
+        h1 {
+            position: relative;
+            text-align: center;
+            font-size: 10vw; 
+            letter-spacing: 0.42vw;
+            text-shadow: 0.33vw 0.33vw 0.67vw black, -0.33vw -0.33vw 0.67vw black, 0.33vw -0.33vw 0.67vw black, -0.33vw 0.33vw 0.67vw black; 
+            animation-name: rotateTitle;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            z-index: 2;
+        }
+    
+        h2 {
+            position: relative;
+            text-align: center;
+            font-size: 4vw;
+            margin-top: -10vw; 
+            z-index: 3;
+         }
+    
+        body {
+            color: white;
+            overflow: hidden;
+            height: 100vh;
+            background-image: url('Images/background.png');
+            background-repeat: repeat-x; 
+            background-size: 100vw auto; 
+            font-family: 'Jersey 10', sans-serif; 
+            font-weight: normal;
+            text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
+            animation: moveBackground 20s linear infinite; 
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0; 
+            }
+            100% {
+                background-position: 100vw 0; 
+            }
+        }
+
+        @keyframes rotateTitle {
+             0% {
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                transform: rotate(5deg);
+            }
+           
+            100% {
+                transform: rotate(-5deg);
+            }
+        }
+    
+        .button {
+            color: blue;
+        }
+    
+        .html {
+            background: rgb(33,171,84);
+            background: linear-gradient(90deg, rgba(33,171,84,1) 0%, rgba(0,255,1,1) 53%, rgba(0,174,255,1) 87%);
+        }
+    
+        .top-buttons {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 10px 0;
+        }
+    
+        .pro-button {
+            background-color: black;
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 0;  
+            text-align: center;
+            text-decoration: none;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            font-size: 2.5vw; 
+            margin: 0vw 0vw; 
+            cursor: pointer;
+            border-radius: 0px;
+            transition: background-color 1s ease, transform 1s ease, font-size 0.3s ease;
+            border: 0.5vw solid #ffffff; 
+            width: 33.33vw;  
+            height: 4.17vh; 
+            z-index: 2;
+        }
+    
+        .pro-button:hover {
+            background-color: #000000;
+            transform: scale(1.05);
+            font-size: 2.67vw; 
+        }
+    
+        .pro-button:active {
+            background-color: #000000;
+            transform: scale(1.15);
+            font-size: 3.33vw; 
+        }
+
+        /* Scrollbox for games */
+            .scroll-box {
+                width: 35vw;
+                height: 45vh;
+                overflow-y: scroll; /* Enable scrolling, but will hide the scrollbar visually */
+                margin: 0.5vw auto;
+                padding: 0.5vw;
+                border: 0.02vw solid #ffffff;
+                border-radius: 0.1vw;
+                background-color: rgba(0, 0, 0, 0.7); /* Transparent background */
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                border-radius: 0vw;
+                border: 0.5vw solid #ffffff; 
+            }
+
+            .scroll-box::-webkit-scrollbar {
+            display: none; /* Hides the scrollbar for webkit browsers (Chrome, Safari, etc.) */
+        }
+            /* Square styles */
+         .square {
+            width: 10vw;
+            height: 10vw;
+            background-color: #ffffff;
+            position: absolute;
+            z-index: 1;
+            bottom: -10vw; /* Start from below the screen */
+            opacity: 0.5;
+            animation: popUp 3s linear forwards;
+        }
+
+        /* Animation keyframes */
+        @keyframes popUp {
+            0% {
+                bottom: -10vw;
+                opacity: 0.5;
+            }
+            50% {
+                bottom: 50%;
+                opacity: 0.5;
+            }
+            100% {
+                bottom: 100%;
+                opacity: 0.25;
+            }
+        }       
+
+        .search-bar {
+            text-shadow: 0.33vw 0.33vw 0.67vw black, -0.33vw -0.33vw 0.67vw black, 0.33vw -0.33vw 0.67vw black, -0.33vw 0.33vw 0.67vw black; 
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 10px 0;
+            background-color: black;
+            color: rgb(255, 255, 255);
+            padding: 0;  
+            text-align: center;
+            text-decoration: none;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            font-size: 2.5vw; 
+            margin: 0vw 0vw; 
+            cursor: pointer;
+            border-radius: 0px;
+            border: 0.5vw solid #ffffff; 
+            width: 33.33vw;  
+            height: 4.17vh; 
+            font-family: 'Jersey 10', sans-serif; 
+            font-weight: normal;
+            text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
+            z-index: 2;
+        }
+
+        input[type="text"].search-bar:focus {
+            outline: none; /* Remove the default outline on focus */
+        }
+
+        /* Hidden content styles */
+        .hidden-content {
+            display: none;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG!</title>
+    <link rel="icon" type="image/x-icon" href="Images/cglogo.png">
+</head>
+<body>
+    <h1>Cool games!</h1>
+    <h2>Video juegos muy profesionales.</h2>
+
+    <!-- Button to toggle visibility of hidden content -->
+    <button onclick="toggleHiddenContent()">Show Hidden Content</button>
+
+    <!-- Search bar for games -->
+    <div class="top-buttons">
+        <input type="text" id="search" class="search-bar" placeholder="Search for a game..." onkeyup="filterGames()">
+    </div>
+
+    <!-- Scrollable game buttons -->
+    <div class="scroll-box" id="gameList">
+        <div class="top-buttons">
+            <a href="mcmain.html" class="pro-button">Play Minecraft.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/Slope-Game-main/start.html" class="pro-button">Play Slope.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/2048-master/start.html" class="pro-button">Play 2048.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/polytrack-main/index.html" class="pro-button">Play Poly Track.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games\tetralegends-master\tetralegends-master\index.html" class="pro-button">Play Tetra Legends.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/n-gon-master/n-gon-master/index.html" class="pro-button">Play N-Gon.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/flappy-gh-pages/flappy-gh-pages/index.html" class="pro-button">Play Flappy Bird.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/cookieclicker-gh-pages/cookieclicker-gh-pages/index.html" class="pro-button">Play Cookie Clicker.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/minesweeper-master/minesweeper-master/index.html" class="pro-button">Play Mine Sweeper.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/blackjack/index.html" class="pro-button">Play Black Jack.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/rooftop-snipers/index.html" class="pro-button">Play Rooftop Snipers.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/CutTheRope-master/index.html" class="pro-button">Play Cut The Rope.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/MindustryClassicMirror-main/MindustryClassicMirror-main/web/game.html" class="pro-button">Play Minedustry.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/learntofly/index.html" class="pro-button">Play Learn To Fly.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/learntofly2/index.html" class="pro-button">Play Learn To Fly 2.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/stickman/index.html" class="pro-button">Play Stickman Hook.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/subwaysurf/index.html" class="pro-button">Play Subway Surfers.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/retrobowl/index.html" class="pro-button">Play Retro Bowl.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/MotoX3M-master/MotoX3M-master/index.html" class="pro-button">Play Moto X3M.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/moto-x3m-2-main/moto-x3m-2-main/index.html" class="pro-button">Play Moto X3M 2.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/Moto-X3M-Winter-main/Moto-X3M-Winter-main/index.html" class="pro-button">Play Moto X3M Winter.</a>
+        </div>
+        <div class="top-buttons">
+            <a href="games/ovo/index.html" class="pro-button">Play OvO.</a>
+        </div>
+         <div class="top-buttons">
+            <a href="games/pacman-lite-master/index.html" class="pro-button">Play Pac-Man.</a>
+        </div>
+    </div>
+
+    <!-- Hidden content -->
+    <div class="hidden-content">
+        <!-- Navbar -->
+        <div class="navbar">
+            <div><b>EduLearn</b></div>
+            <div>
+                <a href="#">Home</a>
+                <a href="#">Courses</a>
+                <a href="#">About</a>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search courses...">
+            </div>
+            <a href="#" class="login-btn">Login</a>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            Learn Anytime, Anywhere
+        </div>
+
+        <!-- Courses -->
+        <div class="courses">
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1591439657848-9f4b9ce436b9?q=80&w=1602&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course">
+                <h3>Introduction to Programming</h3>
+                <p>Learn the basics of Python, Java, and more.</p>
+            </div>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1676302440263-c6b4cea29567?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course">
+                <h3>Advanced Mathematics</h3>
+                <p>Explore calculus, algebra, and problem-solving techniques.</p>
+            </div>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course">
+                <h3>World History</h3>
+                <p>Discover the past and how it shapes the present.</p>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="testimonials">
+            <h2>What Our Students Say</h2>
+            <p class="testimonial">"This platform changed how I learn!" - Alex J.</p>
+            <p class="testimonial">"Great courses and easy to use!" - Maria R.</p>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta">
+            <a href="#">Start Learning Now!</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            © 2025 EduLearn | <a href="#">Contact Us</a> | <a href="#">Privacy Policy</a>
+        </div>
+
+        <!-- Hidden Button -->
+        <button class="hidden-button" onclick="openGame()">&#8203;</button>
+    </div>
+
+    <script src="js/squaremake.js"></script>
+
+    <script>
+        // Function to filter games based on search input
+        function filterGames() {
+            var input, filter, gameList, gameButtons, buttonText;
+            input = document.getElementById('search');
+            filter = input.value.toLowerCase();
+            gameList = document.getElementById('gameList');
+            gameButtons = gameList.getElementsByClassName('top-buttons');
+            
+            // Loop through all buttons and hide those that don't match the search input
+            for (var i = 0; i < gameButtons.length; i++) {
+                buttonText = gameButtons[i].textContent || gameButtons[i].innerText;
+                if (buttonText.toLowerCase().indexOf(filter) > -1) {
+                    gameButtons[i].style.display = "";
+                } else {
+                    gameButtons[i].style.display = "none";
+                }
+            }
+        }
+
+        // Function to toggle the visibility of the hidden content
+        function toggleHiddenContent() {
+            var hiddenContent = document.querySelector('.hidden-content');
+            if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') {
+                hiddenContent.style.display = 'block';
+            } else {
+                hiddenContent.style.display = 'none';
+            }
+        }
+
+        // Function to open a game in fullscreen
+        function openGame() {
+            var win = window.open("", "_blank", "fullscreen=yes");
+            var url = "https://arturo267.github.io/";
+            var iframe = win.document.createElement('iframe');
+            iframe.style.position = "absolute";
+            iframe.style.top = "0";
+            iframe.style.left = "0";
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+
+            win.onbeforeunload = function() {
+                return "Are you sure you want to close the game?";
+            };
+        }
+    </script>
+</body>
+</html>
