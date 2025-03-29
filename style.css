@@ -81,5 +81,19 @@ html {
 body {
   font-family: Arial, sans-serif;
 }
+div { width: 300px; height: 300px; text-align: center; border: 1px solid black;  position: absolute; }
+div#layer1 { background-color: red; }
+div#layer2 { background-color: green; }
+div#layer3 { background-color: blue; }
+div#layer4 { background-color: red; }
+div#layer5 { background-color: green; }
+div#layer6 { background-color: blue; }
+div#layer7 { background-color: red; }
+div#layer8 { background-color: green; }
+div#layer9 { background-color: blue; }
+div#layer10 { background-color: red; }
+
+p { color: white; font-size: 50px; margin-top: 120px; }
+.movetotop { z-index: 10; }
 
 
