@@ -1,60 +1,122 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <title>Blackout</title>
-<style>
-  /* Style for the loading screen */
-  body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-  }
-
-  .logo {
-    width: 100px;
-    height: 100px;
-    animation: fadeOut 3s forwards;
-  }
-
-
-        @keyframes fadeOut {
-          0% { opacity: 1; }
-          100% { opacity: 0; }
-        }
-
-    .text {
-      font-family: "Poppins", sans-serif;
-      font-weight: 600;
-      font-style: normal;
-      margin-top: 10px;
-      font-size: 24px;
-      opacity: 1; /* Set initial opacity to 1 */
-    color:white;
-    animation: fadeOut 3s forwards;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Blackout V3</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Poppins;
+      text-align: center;
     }
-      </style>
-</head>
-<body>
-<div class="text">Blackout</div>
+    
+    h1 {
+      font-size: 100px;
+    }
+.button {
+    position: relative;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    transition: all .2s;
+    border: none;
+    font-family: Poppins;
+    font-weight: 425;
+    color: rgb(255, 255, 255);
+    background-color: rgb(48, 48, 48);
+    padding: 1em 2em;
+    margin: 5px;
+}
 
-<script>
-  window.onload = function() {
-    setTimeout(function() {
-      window.location.href = "start.html"; // Replace with your desired URL
-    }, 3000); // 3000 milliseconds = 3 seconds
-  };
-</script>
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: none; /* Removed the white shadow on hover */
+}
 
+.button:active {
+    transform: translateY(-1px);
+}
+
+.button::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.button::after {
+  color: rgb(255, 255, 255);
+  background-color: rgb(48, 48, 48);
+}
+
+.button:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+  </style>
 </head>
+
 <body>
+  <!-- text down here -->
+
+
+  <h1>Blackout</h1>
+<p>Nvm fortnite is ready in blackout have fun! </p>
+
+
+  
+  <style>
+    .text {
+      border-radius:10%;
+      background-color: black;
+    }
+  </style>
+
+
+
+  <!-- up there is the text -->
+
+
+  <a href="blackout-verse.html">
+  <button class="button" >Games</button>
+  </a>
+
+     <a href="tools.html">
+  <button class="button" >Tools</button>
+  </a>
+
+
+     <a href="settings.html">
+    <button class="button" >Themes</button>
+    </a>
+
+    <a href="https://forms.gle/kfmZjb7JkCZHKoGH8">
+    <button class="button">Game Suggestion Form</button>
+    </a>
+
+ 
+  <div style="position: absolute; top: 0; right: 0;">
+   
+ <a href="links.html">
+    <button class="button" >Blackout Alt Links</button>
+    </a>
+
+  </div>
+
     <script>
     document.addEventListener("DOMContentLoaded", function() {
   // Get the select element
@@ -77,16 +139,8 @@
 });
 
   </script>
-</body>
-</html>
-<div class="dust-particle"></div></body>
+  <div class="dust-particle"></div></body>
 <style>
-  body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: black;
-  }
   #particles-js {
       position: fixed;
       top: 0;
@@ -212,6 +266,19 @@
       "retina_detect": true
   });
 </script>
+
 </body>
+  <style>
+        .bottom-script {
+            position: fixed;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="bottom-script">
+        <script type="text/javascript" src="https://www.stat-counter.org/count/fhw0"></script>
+    </div>
 </html>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
