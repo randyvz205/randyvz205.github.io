@@ -229,6 +229,9 @@
     <!-- Button to toggle visibility of hidden content -->
     <button onclick="toggleHiddenContent()">Show Hidden Content</button>
 
+    <!-- Button to open HTML code in a new window -->
+    <button onclick="openHtmlInNewWindow()">Open HTML in New Window</button>
+
     <!-- Hidden content -->
     <div class="hidden-content">
         <h1>Cool games!</h1>
@@ -344,25 +347,99 @@
                 }
             }
 
-            // Function to open a game in fullscreen
-            function openGame() {
-                var win = window.open("", "_blank", "fullscreen=yes");
-                var url = "https://arturo267.github.io/";
-                var iframe = win.document.createElement('iframe');
-                iframe.style.position = "absolute";
-                iframe.style.top = "0";
-                iframe.style.left = "0";
-                iframe.style.width = "100%";
-                iframe.style.height = "100%";
-                iframe.style.border = "none";
-                iframe.src = url;
-                win.document.body.appendChild(iframe);
-
-                win.onbeforeunload = function() {
-                    return "Are you sure you want to close the game?";
-                };
-            }
-        </script>
-    </div>
-</body>
-</html>
+            // Function to open the specified HTML code in a new blank window
+            function openHtmlInNewWindow() {
+                var newWindow = window.open("", "_blank");
+                var htmlContent = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">  
+                    <style>
+                        h1 {
+                            position: relative;
+                            text-align: center;
+                            font-size: 10vw; 
+                            letter-spacing: 0.42vw;
+                            text-shadow: 0.33vw 0.33vw 0.67vw black, -0.33vw -0.33vw 0.67vw black, 0.33vw -0.33vw 0.67vw black, -0.33vw 0.33vw 0.67vw black; 
+                            animation-name: rotateTitle;
+                            animation-duration: 5s;
+                            animation-iteration-count: infinite;
+                            animation-timing-function: ease-in-out;
+                            z-index: 2;
+                        }
+                    
+                        h2 {
+                            position: relative;
+                            text-align: center;
+                            font-size: 4vw;
+                            margin-top: -10vw; 
+                            z-index: 3;
+                        }
+                    
+                        body {
+                            color: white;
+                            overflow: hidden;
+                            height: 100vh;
+                            background-image: url('Images/background.png');
+                            background-repeat: repeat-x; 
+                            background-size: 100vw auto; 
+                            font-family: 'Jersey 10', sans-serif; 
+                            font-weight: normal;
+                            text-shadow: 0.17vw 0.17vw 0.33vw rgb(0, 0, 0), -0.17vw -0.17vw 0.33vw rgb(0, 0, 0), 0.17vw -0.17vw 0.33vw rgb(0, 0, 0), -0.17vw 0.17vw 0.33vw rgb(0, 0, 0);
+                            animation: moveBackground 20s linear infinite; 
+                        }
+                    
+                        @keyframes moveBackground {
+                            0% {
+                                background-position: 0 0; 
+                            }
+                            100% {
+                                background-position: 100vw 0; 
+                            }
+                        }
+                    
+                        @keyframes rotateTitle {
+                             0% {
+                                transform: rotate(-5deg);
+                            }
+                    
+                            50% {
+                                transform: rotate(5deg);
+                            }
+                           
+                            100% {
+                                transform: rotate(-5deg);
+                            }
+                        }
+                    
+                        .button {
+                            color: blue;
+                        }
+                    
+                        .html {
+                            background: rgb(33,171,84);
+                            background: linear-gradient(90deg, rgba(33,171,84,1) 0%, rgba(0,255,1,1) 53%, rgba(0,174,255,1) 87%);
+                        }
+                    
+                        .top-buttons {
+                            display: flex;
+                            justify-content: center;
+                            padding: 0;
+                            margin: 10px 0;
+                        }
+                    
+                        .pro-button {
+                            background-color: black;
+                            border: none;
+                            color: rgb(255, 255, 255);
+                            padding: 0;  
+                            text-align: center;
+                            text-decoration: none;
+                            display: flex; 
+                            justify-content: center; 
+                            align-items: center;
+                            font-size: 2.5vw; 
+                            margin: 0vw 0
